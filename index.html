@@ -3,10 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Réservation de Place de Parking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px;
+        }
+
+        input, select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bonjour, monde !</h1>
-    <p>Ceci est un fichier HTML de base.</p>
+
+    <header>
+        <h1>Réservez votre place de parking</h1>
+    </header>
+
+    <div class="container">
+        <h2>Formulaire de réservation</h2>
+        <form action="#" method="POST">
+            <label for="nom">Nom complet :</label>
+            <input type="text" id="nom" name="nom" placeholder="Entrez votre nom complet" required>
+
+            <label for="email">Adresse e-mail :</label>
+            <input type="email" id="email" name="email" placeholder="Entrez votre adresse e-mail" required>
+
+            <label for="date">Date de réservation :</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="heure">Heure d'arrivée :</label>
+            <input type="time" id="heure" name="heure" required>
+
+            <label for="duree">Durée de réservation (en heure):</label>
+            <input type="number" id="duree" name="duree" min="1" placeholder="Entrez la durée en heures" required>
+
+            <label for="vehicule">Type de véhicule :</label>
+            <select id="vehicule" name="vehicule" required>
+                <option value="voiture">Voiture</option>
+                <option value="moto">Moto</option>
+                <option value="Camion">Camion</option>
+            </select>
+
+            <button type="submit">Réserver</button>
+        </form>
+    </div>
+
+    <div class="container" id="places-libres">
+        <h2>Places de parking disponibles : </h2>
+    </div>
+
+    <footer>
+        &copy; Réservation de Parking. Capgemini Equipe 1.
+    </footer>
+
 </body>
 </html>
