@@ -1,13 +1,9 @@
 import csv
 import random
 import string
+import datetime
 
-# Définir les catégories de véhicules et les prix par heure
-categories_vehicules = {
-    "moto": 1.5,  # prix par heure
-    "voiture": 2.5,
-    "camion": 5.0
-}
+
 
 # Types de places
 types_places = ["moto", "voiture", "camion","handicape"]
@@ -34,22 +30,28 @@ def generer_donnees_vehicule(int place):
     if (occupe = "oui"):
         type_vehicule= types_places[random.randint(0, 3)]
         plaque = generer_plaque()
-        temps_paye = round(random.uniform(0.5, 24), 2)  # Entre 30 min et 24 heures
-        prix=
-        horaire_debut=
-        horaire_fin=
+        temps_paye = datetime.timedelta(random.randint(0, 1),random.randint(0, 23),random.randint(0, 59),random.randint(0, 59))
+        prix= random.choice[1.4,3.8,7.3]
+        horaire_debut=datetime.datetime(2024,10,1,random.randint(0, 23),random.randint(0, 59),random.randint(0, 59),0)
+        horaire_fin=horaire_debut + temps_paye
+    else:
+        type_vehicule= None
+        temps_paye =  None
+        prix= None
+        horaire_debut= None
+        horaire_fin= None
 
 
     return {
         "Numero de place":place,
         "Type de place":type_place,
-        "Occupation":,
+        "Occupation":occupe,
         "Plaque d'immatriculation":plaque,
         "Catégorie de véhicule": type_vehicule,
         "Temps paye": temps_paye,
-        "Prix paye":,
-        "Horaire d'arrivé":,
-        "Horaire de départ prevu":,
+        "Prix paye":prix,
+        "Horaire d'arrivé":horaire_debut,
+        "Horaire de départ prevu":horaire_fin,
     }
 
 # Générer un CSV avec des véhicules aléatoires
