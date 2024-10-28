@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement de Réservation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Paiement de la Réservation</h1>
+    </header>
+
+    <div class="container">
+        <h2>Détails du paiement</h2>
+        <form action="#" method="POST">
+            <label for="nomCarte">Nom sur la carte :</label>
+            <input type="text" id="nomCarte" name="nomCarte" placeholder="Nom du titulaire de la carte" required>
+
+            <label for="numeroCarte">Numéro de carte :</label>
+            <input type="text" id="numeroCarte" name="numeroCarte" placeholder="1234 5678 9012 3456" pattern="\d{16}" maxlength="16" required>
+
+            <label for="expiration">Date d'expiration :</label>
+            <input type="month" id="expiration" name="expiration" required>
+
+            <label for="cvc">Code CVC :</label>
+            <input type="text" id="cvc" name="cvc" placeholder="123" pattern="\d{3}" maxlength="3" required>
+
+            <button type="submit">Payer</button>
+        </form>
+    </div>
+
+    <footer>
+        &copy; 2024 - Réservation de Parking. Capgemini équipe 1.
+    </footer>
+
+</body>
+</html>
